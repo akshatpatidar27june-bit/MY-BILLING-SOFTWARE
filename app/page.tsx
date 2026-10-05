@@ -108,7 +108,7 @@ export default function Home() {
           <p>SmartBillz started with a simple idea: restaurant owners should not have to choose between expensive software and limited software.</p>
           <p>We are building a practical, reliable platform around the daily work of restaurants — billing, outlets, inventory, staff, customers and reports — with a strong focus on clarity and ease of use.</p>
           <p>The goal is straightforward: give Indian restaurant businesses professional tools without making everyday operations complicated.</p>
-          <div className="founder-line"><span className="founder-dot" /><div><b>Akshat Patidar</b><small>Founder & Product Builder, SMARTBILLZ</small></div></div>
+          <div className="founder-line"><div className="founder-signature"><span>AP</span><i /></div><div><b>Akshat Patidar</b><small>Founder & Product Builder, SMARTBILLZ</small></div><strong className="founder-mark">SMARTBILLZ</strong></div>
           <div className="founder-highlights"><div><b>India First</b><small>Built for Indian Businesses</small></div><div><b>Founder Led</b><small>Product & Development</small></div><div><b>Growth Ready</b><small>Designed for Multiple Outlets</small></div></div>
         </div>
       </section>
