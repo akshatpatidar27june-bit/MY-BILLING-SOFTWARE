@@ -71,3 +71,19 @@ footer{background:#080808;color:#77736c;padding:55px 8vw;display:grid;grid-templ
   .nav-cta{padding:9px 12px;font-size:11px}
   .hero-section{padding-top:96px}
 }
+
+@media(max-width:650px){
+  .nav{height:78px;padding:0 4vw}
+  .brand{gap:8px;font-size:17px}
+  .brand-logo{width:44px;height:44px}
+  .nav-actions{display:none}
+  .desktop-nav{display:flex;gap:6px;margin:0 0 0 auto}
+  .desktop-nav a{font-size:9px;letter-spacing:.01em;padding:8px 9px;border:1px solid #ffffff16;border-radius:999px;background:#ffffff06;color:#c8c4bd;white-space:nowrap}
+  .desktop-nav a:hover{color:#fff}
+}
+@media(max-width:380px){
+  .brand{font-size:15px}
+  .brand-logo{width:40px;height:40px}
+  .desktop-nav{gap:4px}
+  .desktop-nav a{font-size:8px;padding:7px 7px}
+}
