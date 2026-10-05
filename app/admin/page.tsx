@@ -55,7 +55,7 @@ export default function AdminPage(){
    const pin=locked?prompt("Create the PIN that will unlock this restaurant:"):"";
    if(locked&&!pin)return;
    await api("restaurants?id=eq."+r.id,token,{method:"PATCH",body:JSON.stringify({status:locked?"locked":"active",lock_pin:locked?pin:null})});
-   await refresh();setSelected({...r,status:locked?"locked":"active",lock_pin:locked?pin:undefined});
+   await refresh();setSelected({...r,status:locked?"locked":"active",lock_pin:locked?(pin??undefined):undefined});
  }
 
  async function changePlan(plan:string){
