@@ -120,3 +120,25 @@ footer{background:#080808;color:#77736c;padding:55px 8vw;display:grid;grid-templ
 .mobile-menu-panel a:hover{background:#ffffff0d}
 .mobile-menu:focus-within .mobile-menu-panel{display:block}
 @media(max-width:650px){.mobile-menu{display:block;flex:0 0 auto}.desktop-nav{display:flex!important}.desktop-nav a:nth-child(4){display:none}}
+
+@media(max-width:650px){
+  .nav{height:76px!important;padding:0 4vw!important}
+  .nav-inner{display:flex!important;align-items:center!important;width:100%!important;gap:7px!important}
+  .brand{display:flex!important;align-items:center!important;gap:7px!important;min-width:0!important}
+  .brand-logo{width:40px!important;height:40px!important;flex:0 0 40px!important}
+  .brand-name{font-size:16px!important;white-space:nowrap!important}
+  .desktop-nav{display:flex!important;align-items:center!important;justify-content:flex-end!important;gap:5px!important;margin-left:auto!important}
+  .desktop-nav a{display:flex!important;align-items:center!important;justify-content:center!important;height:30px!important;padding:0 8px!important;font-size:8px!important;line-height:1!important;border-radius:8px!important;white-space:nowrap!important}
+  .desktop-nav a:nth-child(4){display:none!important}
+  .mobile-menu{display:block!important;flex:0 0 30px!important;margin-left:1px!important}
+  .mobile-menu-trigger{width:30px!important;height:30px!important;border-radius:8px!important;gap:3px!important}
+  .mobile-menu-panel{top:38px!important;right:0!important}
+}
+@media(max-width:390px){
+  .brand-logo{width:36px!important;height:36px!important;flex-basis:36px!important}
+  .brand-name{font-size:14px!important}
+  .desktop-nav{gap:3px!important}
+  .desktop-nav a{height:29px!important;padding:0 6px!important;font-size:7px!important}
+  .mobile-menu{flex-basis:29px!important}
+  .mobile-menu-trigger{width:29px!important;height:29px!important}
+}
