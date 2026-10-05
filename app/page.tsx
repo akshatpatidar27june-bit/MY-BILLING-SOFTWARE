@@ -35,6 +35,16 @@ export default function Home() {
         <nav className="desktop-nav">
           <a href="#product">Features</a><a href="#plans">Pricing</a><a href="#about">About</a><a href="#contact">Contact</a>
         </nav>
+        <div className="mobile-menu">
+          <button className="mobile-menu-trigger" aria-label="Open menu"><span></span><span></span><span></span></button>
+          <div className="mobile-menu-panel">
+            <a href="#product">Features</a>
+            <a href="#plans">Pricing</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+            <a href="/login">Login</a>
+          </div>
+        </div>
         <div className="nav-actions">
           <a className="login-link" href="/login">Login</a>
           <a className="nav-cta" href="#plans">Get Started <span>↗</span></a>
