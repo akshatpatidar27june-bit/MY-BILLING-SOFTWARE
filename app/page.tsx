@@ -92,7 +92,7 @@ export default function Home() {
       </section>
 
       <section id="about" className="about-section">
-        <div className="about-visual">
+        <div className="about-visual"><div className="founder-photo-card"><a href="/IMG20260816111001.jpg" target="_blank" rel="noreferrer"><img src="/IMG20260816111001.jpg" alt="Akshat Patidar — Founder of SMARTBILLZ" /></a><div className="founder-photo-info"><b>Akshat Patidar</b><span>Founder & Product Builder</span><small>Age: 15 years</small></div></div>
           <div className="about-brand-card">
             <div className="about-logo-ring"><img src="/SmallSquareLogoJpg.jpg" alt="SmartBillz logo" /></div>
             <div className="about-brand-word">SMART<span>BILLZ</span></div>
@@ -115,7 +115,7 @@ export default function Home() {
 
       <section id="contact" className="contact-section">
         <div><div className="section-label">04 — GET STARTED</div><h2>Ready to run<br /><em>smarter?</em></h2></div>
-        <div><p>Talk to us about your restaurant, outlets and billing needs. SmartBillz is being built for businesses that want more control with less complexity.</p><a className="primary-btn" href="mailto:hello@smartbillz.in">Contact SmartBillz <span>↗</span></a></div>
+        <div><p>Talk to us about your restaurant, outlets and billing needs. SmartBillz is being built for businesses that want more control with less complexity.</p><div className="contact-details"><a href="tel:+919244733663">+91 92447 33663</a><a href="mailto:hello@smartbillz.in">hello@smartbillz.in</a></div><a className="primary-btn" href="tel:+919244733663">Call SmartBillz <span>↗</span></a></div>
       </section>
 
       <footer><div className="footer-brand"><img src="/SmallSquareLogoJpg.jpg" alt="" /> SMART<span>BILLZ</span></div><p>Restaurant billing. Reimagined for India.</p><div>© 2026 SmartBillz. All rights reserved.</div></footer>
