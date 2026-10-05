@@ -115,7 +115,7 @@ export default function Home() {
 
       <section id="contact" className="contact-section">
         <div><div className="section-label">04 — GET STARTED</div><h2>Ready to run<br /><em>smarter?</em></h2></div>
-        <div><p>Talk to us about your restaurant, outlets and billing needs. SmartBillz is being built for businesses that want more control with less complexity.</p><div className="contact-details"><a href="tel:+919244733663">+91 92447 33663</a><a href="mailto:hello@smartbillz.in">hello@smartbillz.in</a></div><a className="primary-btn" href="tel:+919244733663">Call SmartBillz <span>↗</span></a></div>
+        <div><p>Talk to us about your restaurant, outlets and billing needs. SmartBillz is being built for businesses that want more control with less complexity.</p><div className="contact-details"><a href="tel:+919244733663">+91 92447 33663</a><a href="mailto:akshatpatidar27june@gmail.com">akshatpatidar27june@gmail.com</a></div><a className="primary-btn" href="tel:+919244733663">Call SmartBillz <span>↗</span></a></div>
       </section>
 
       <footer><div className="footer-brand"><img src="/SmallSquareLogoJpg.jpg" alt="" /> SMART<span>BILLZ</span></div><p>Restaurant billing. Reimagined for India.</p><div>© 2026 SmartBillz. All rights reserved.</div></footer>
