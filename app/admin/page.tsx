@@ -30,7 +30,7 @@ export default function AdminPage(){
  const [error,setError]=useState("");
  const [showAdd,setShowAdd]=useState(false);
  const [features,setFeatures]=useState<Record<string,boolean>>({});
- const [form,setForm]=useState({name:"",owner_name:"",owner_email:"",owner_phone:"",address:"",gstin:"",plan_name:"Starter",amount:"10000",valid_until:"",outlet_name:"Main Outlet",capacity:"1"});
+ const [form,setForm]=useState({name:"",owner_name:"",owner_email:"",owner_password:"",owner_phone:"",address:"",gstin:"",plan_name:"Starter",amount:"10000",valid_until:"",outlet_name:"Main Outlet",capacity:"1"});
 
  useEffect(()=>{try{const s=JSON.parse(localStorage.getItem("smartbillz_session")||"");if(s.user?.email?.toLowerCase()!=="akshat@gmail.com")throw 0;setToken(s.access_token)}catch{router.replace("/login")}},[router]);
  useEffect(()=>{if(token)refresh()},[token]);
@@ -43,6 +43,10 @@ export default function AdminPage(){
  async function addRestaurant(){
    try{
     const r=(await api("restaurants",token,{method:"POST",body:JSON.stringify({name:form.name,owner_name:form.owner_name,owner_email:form.owner_email,owner_phone:form.owner_phone,address:form.address,gstin:form.gstin})}))[0];
+    const ownerRes=await fetch(process.env.NEXT_PUBLIC_SUPABASE_URL+"/functions/v1/create-restaurant-owner",{method:"POST",headers:{apikey:process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY||"",Authorization:"Bearer "+token,"Content-Type":"application/json"},body:JSON.stringify({email:form.owner_email,password:form.owner_password,restaurant_id:r.id})});
+    if(!ownerRes.ok){const msg=await ownerRes.text();throw new Error(msg||"Restaurant login creation failed.");}
+    const owner=await ownerRes.json();
+    await api("restaurants?id=eq."+r.id,token,{method:"PATCH",body:JSON.stringify({owner_user_id:owner.user_id})});
     await api("restaurant_features",token,{method:"POST",body:JSON.stringify({restaurant_id:r.id})});
     await api("subscriptions",token,{method:"POST",body:JSON.stringify({restaurant_id:r.id,plan_name:form.plan_name,amount:Number(form.amount)||0,valid_until:form.valid_until||new Date(Date.now()+31536000000).toISOString().slice(0,10),payment_status:"pending"})});
     await api("outlets",token,{method:"POST",body:JSON.stringify({restaurant_id:r.id,name:form.outlet_name||"Main Outlet",capacity:Number(form.capacity)||1})});
@@ -118,7 +122,7 @@ export default function AdminPage(){
    </>}
   </section>
 
-  {showAdd&&<div className="modal-backdrop"><div className="admin-modal"><button className="modal-close" onClick={()=>setShowAdd(false)}>×</button><small>NEW BUSINESS</small><h2>Add restaurant</h2><p>Create business details, subscription and first outlet.</p><div className="form-grid">{(["name","owner_name","owner_email","owner_phone","address","gstin","outlet_name","capacity"] as const).map(k=><label key={k}>{k.replaceAll("_"," ")}<input value={form[k]} onChange={e=>setForm({...form,[k]:e.target.value})}/></label>)}</div><div className="modal-plan"><label>Plan<select value={form.plan_name} onChange={e=>setForm({...form,plan_name:e.target.value})}>{plans.map(x=><option key={x}>{x}</option>)}</select></label><label>Amount<input value={form.amount} onChange={e=>setForm({...form,amount:e.target.value})}/></label><label>Valid until<input type="date" value={form.valid_until} onChange={e=>setForm({...form,valid_until:e.target.value})}/></label></div><button className="primary-admin wide" onClick={addRestaurant}>Create restaurant →</button></div></div>}
+  {showAdd&&<div className="modal-backdrop"><div className="admin-modal"><button className="modal-close" onClick={()=>setShowAdd(false)}>×</button><small>NEW BUSINESS</small><h2>Add restaurant</h2><p>Create business details, subscription and first outlet.</p><div className="form-grid">{(["name","owner_name","owner_email","owner_phone","address","gstin","outlet_name","capacity"] as const).map(k=><label key={k}>{k.replaceAll("_"," ")}<input value={form[k]} onChange={e=>setForm({...form,[k]:e.target.value})}/></label>)}<label>Owner login password<input type="password" minLength={8} value={form.owner_password} onChange={e=>setForm({...form,owner_password:e.target.value})}/><small>Used by the restaurant owner to sign in.</small></label></div><div className="modal-plan"><label>Plan<select value={form.plan_name} onChange={e=>setForm({...form,plan_name:e.target.value})}>{plans.map(x=><option key={x}>{x}</option>)}</select></label><label>Amount<input value={form.amount} onChange={e=>setForm({...form,amount:e.target.value})}/></label><label>Valid until<input type="date" value={form.valid_until} onChange={e=>setForm({...form,valid_until:e.target.value})}/></label></div><button className="primary-admin wide" onClick={addRestaurant}>Create restaurant →</button></div></div>}
  </main>
 }
 
