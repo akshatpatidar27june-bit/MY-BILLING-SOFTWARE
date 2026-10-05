@@ -33,11 +33,11 @@ export default function Home() {
           <span>SMART<span className="brand-accent">BILLZ</span></span>
         </a>
         <nav className="desktop-nav">
-          <a href="#product">Features</a><a href="#plans">Pricing</a><a href="#about">About</a><a href="#contact">Contact</a>
+          <a href="/features">Features</a><a href="/pricing">Pricing</a><a href="/about">About</a><a href="/contact">Contact</a>
         </nav>
         <div className="nav-actions">
           <a className="login-link" href="/login">Login</a>
-          <a className="nav-cta" href="#plans">Get Started <span>↗</span></a>
+          <a className="nav-cta" href="/pricing">Get Started <span>↗</span></a>
         </div>
       </header>
 
