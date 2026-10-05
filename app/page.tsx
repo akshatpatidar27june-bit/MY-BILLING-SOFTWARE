@@ -104,7 +104,7 @@ export default function Home() {
               </div>
             </div>
             <div className="laptop-base"><span /><span /><span /></div>
-          </div></div>
+          </div>
           <div className="floating-card sales-card"><small>SALES TODAY</small><strong>₹48,650</strong><em>+18.4%</em></div>
           <div className="floating-card outlet-card"><span className="mini-check">✓</span><div><small>OUTLET STATUS</small><strong>All systems ready</strong></div></div>
         </div>
