@@ -87,3 +87,25 @@ footer{background:#080808;color:#77736c;padding:55px 8vw;display:grid;grid-templ
   .desktop-nav{gap:4px}
   .desktop-nav a{font-size:8px;padding:7px 7px}
 }
+
+@media(max-width:650px){
+  .nav{height:74px;padding:0 4vw;display:flex;align-items:center}
+  .nav-inner{width:100%;display:flex;align-items:center;justify-content:space-between;gap:8px}
+  .brand{flex:0 0 auto}
+  .desktop-nav{display:flex!important;flex:1;justify-content:flex-end;gap:4px;margin:0}
+  .desktop-nav a{font-size:9px!important;padding:7px 8px!important;white-space:nowrap}
+  .nav-actions{display:none!important}
+  .hero-section{padding-top:92px!important}
+  .device-stage{height:285px!important;width:100%!important;margin:0!important;display:flex;justify-content:center;align-items:flex-start;overflow:visible}
+  .laptop{width:380px!important;left:50%!important;top:18px!important;transform:translateX(-50%) rotateX(2deg) rotateY(-3deg) rotateZ(-1deg)!important}
+  .laptop-base{width:405px!important;height:11px!important;bottom:-11px!important}
+  .stage-floor{width:350px!important;height:105px!important;bottom:5px!important}
+}
+@media(max-width:380px){
+  .desktop-nav a{font-size:8px!important;padding:6px 6px!important}
+  .brand{font-size:15px!important}
+  .brand-logo{width:40px!important;height:40px!important}
+  .laptop{width:330px!important}
+  .laptop-base{width:350px!important}
+  .stage-floor{width:310px!important}
+}
